@@ -1,7 +1,7 @@
 {
-  "name": "Example Extension",
+  "name": "Bitcoin Trade Data Scraper",
   "version": "0.2",
-  "description": "This is a Google Chrome Example Extension",
+  "description": "This is a Google Chrome extension that scrapes bitcoin trade data",
   "background": {
     "scripts": ["bg.js"]
   },
