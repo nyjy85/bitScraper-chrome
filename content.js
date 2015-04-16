@@ -24,9 +24,12 @@ function init(){
 
 function getBitData(){
 	var allGlows = [];
-	$('.glow').each(function(){sum = $(this).find('.sum').html(); 
+	$('.glow').each(function(){
+		sum = $(this).find('.sum').html(); 
 		value = $(this).find('.value').html(); 
-		allGlows.push([sum, value])
+		price = $(this).find('.price').html();
+		amount = $(this).find('.amount').html();
+		allGlows.push([sum, value, price, amount])
 	});
 	console.log(allGlows);
 }
