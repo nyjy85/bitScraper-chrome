@@ -22,16 +22,34 @@ function init(){
 }
 
 
+
+
 function getBitData(){
-	var allGlows = [];
+	//var allGlows = [];
 	$('.glow').each(function(){
 		sum = $(this).find('.sum').html(); 
 		value = $(this).find('.value').html(); 
 		price = $(this).find('.price').html();
-		amount = $(this).find('.amount').html();
-		allGlows.push([sum, value, price, amount])
+		amount = $(this).find('.amount').text();
+		//allGlows.push([sum, value, price, amount])
+		
+		$.ajax({
+			// where u goin
+			url:'https://bitproj-nyjy.rhcloud.com/cloud/models/btc/bsBot.php',
+			data:{
+				// what r u sending
+				'sum': sum,
+				'value': value,
+				'price': price,
+				'amount': amount
+			},
+			// what u wanna do once request is completed
+			complete: function(transport){
+				console.log(transport.responseText);
+			}
+		})
 	});
-	console.log(allGlows);
+	//console.log(allGlows);
 }
 
 
